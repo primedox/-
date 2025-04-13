@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Моя Мини-Аппа</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <main>
+            <section id="home" class="page active">
+                <div class="banner-container">
+                    <div class="banner-slider">
+                        <!-- Элементы баннера (добавьте свои данные) -->
+                        <div class="banner-item">
+                            <img src="image1.jpg" alt="Изображение 1">
+                            <div class="banner-info">
+                                <h3>Имя 1</h3>
+                                <p>Должность 1</p>
+                            </div>
+                        </div>
+                        <div class="banner-item">
+                            <img src="image2.jpg" alt="Изображение 2">
+                            <div class="banner-info">
+                                <h3>Имя 2</h3>
+                                <p>Должность 2</p>
+                            </div>
+                        </div>
+                        <div class="banner-item">
+                            <img src="image3.jpg" alt="Изображение 3">
+                            <div class="banner-info">
+                                <h3>Имя 3</h3>
+                                <p>Должность 3</p>
+                            </div>
+                        </div>
+                        <div class="banner-item">
+                            <img src="image4.jpg" alt="Изображение 4">
+                            <div class="banner-info">
+                                <h3>Имя 4</h3>
+                                <p>Должность 4</p>
+                            </div>
+                        </div>
+                        <div class="banner-item">
+                            <img src="image5.jpg" alt="Изображение 5">
+                            <div class="banner-info">
+                                <h3>Имя 5</h3>
+
+
+                                <p>Должность 5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-elements">
+                    <div class="interactive-item" onclick="openModal('info1')">
+                        <i class="fas fa-info-circle fa-3x"></i>
+                        <p>Информация 1</p>
+                    </div>
+                    <div class="interactive-item" onclick="openModal('info2')">
+                        <i class="fas fa-question-circle fa-3x"></i>
+                        <p>Вопрос 2</p>
+                    </div>
+                    <div class="interactive-item" onclick="openModal('info3')">
+                        <i class="fas fa-exclamation-triangle fa-3x"></i>
+                        <p>Предупреждение 3</p>
+                    </div>
+                </div>
+
+                <div class="modal" id="info1Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeModal('info1')">&times;</span>
+                        <h2>Информация 1</h2>
+                        <p>Подробная информация о первом элементе.</p>
+                    </div>
+                </div>
+                <div class="modal" id="info2Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeModal('info2')">&times;</span>
+                        <h2>Информация 2</h2>
+                        <p>Подробная информация о втором элементе.</p>
+                    </div>
+                </div>
+                  <div class="modal" id="info3Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeModal('info3')">&times;</span>
+                        <h2>Информация 3</h2>
+                        <p>Подробная информация о третьем элементе.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="products" class="page">
+                <div class="product-grid">
+                    <!-- Пример товаров -->
+                    <div class="product-card" onclick="openProductModal('product1')">
+                        <img src="product1.jpg" alt="Товар 1">
+                        <h3>Товар 1</h3>
+                        <p class="price">100 руб.</p>
+                    </div>
+                    <div class="product-card" onclick="openProductModal('product2')">
+                        <img src="product2.jpg" alt="Товар 2">
+                        <h3>Товар 2</h3>
+                        <p class="price">200 руб.</p>
+                    </div>
+                       <div class="product-card" onclick="openProductModal('product3')">
+                        <img src="product3.jpg" alt="Товар 3">
+                        <h3>Товар 3</h3>
+                        <p class="price">300 руб.</p>
+                    </div>
+                       <div class="product-card" onclick="openProductModal('product4')">
+                        <img src="product4.jpg" alt="Товар 4">
+                        <h3>Товар 4</h3>
+                        <p class="price">400 руб.</p>
+                    </div>
+                       <div class="product-card" onclick="openProductModal('product5')">
+                        <img src="product5.jpg" alt="Товар 5">
+                        <h3>Товар 5</h3>
+                        <p class="price">500 руб.</p>
+                    </div>
+                       <div class="product-card" onclick="openProductModal('product6')">
+                        <img src="product6.jpg" alt="Товар 6">
+                        <h3>Товар 6</h3>
+                        <p class="price">600 руб.</p>
+                    </div>
+                    <!-- Добавьте остальные товары -->
+                </div>
+                  <div class="modal" id="product1Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeProductModal('product1')">&times;</span>
+                        <h2>Товар 1</h2>
+                        <p>Подробная информация о первом товаре.</p>
+                    </div>
+                </div>
+                 <div class="modal" id="product2Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeProductModal('product2')">&times;</span>
+                        <h2>Товар 2</h2>
+                        <p>Подробная информация о втором товаре.</p>
+                    </div>
+                </div>
+                 <div class="modal" id="product3Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeProductModal('product3')">&times;</span>
+                        <h2>Товар 3</h2>
+                        <p>Подробная информация о третьем товаре.</p>
+                    </div>
+                </div>
+                 <div class="modal" id="product4Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeProductModal('product4')">&times;</span>
+                        <h2>Товар 4</h2>
+                        <p>Подробная информация о четвертом товаре.</p>
+                    </div>
+                </div>
+                  <div class="modal" id="product5Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeProductModal('product5')">&times;</span>
+                        <h2>Товар 5</h2>
+                        <p>Подробная информация о пятом товаре.</p>
+                    </div>
+                </div>
+                  <div class="modal" id="product6Modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="closeProductModal('product6')">&times;</span>
+                        <h2>Товар 6</h2>
+                        <p>Подробная информация о шестом товаре.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="contact" class="page">
+                <form id="contactForm" action="send.php" method="POST">
+                    <input type="text" name="nickname" placeholder="Ваш никнейм" required>
+                    <input type="email" name="email" placeholder="Ваша почта" required>
+                    <textarea name="message" placeholder="Суть вопроса" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </section>
+        </main>
+
+        <nav class="tabs">
+            <a href="#home" class="tab active" data-page="home">
+                <i class="fas fa-home"></i>
+                <span>Главная</span>
+            </a>
+            <a href="#products" class="tab" data-page="products">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Товары</span>
+            </a>
+            <a href="#contact" class="tab" data-page="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Связь</span>
+            </a>
+        </nav>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

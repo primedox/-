@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Связь - STARPETS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div id="header-container"></div>
+
+        <main>
+            <section class="contact-form">
+                <h2>Обратная связь <i class="fas fa-headset"></i></h2>
+                <p>Задайте вопрос или оставьте свой отзыв!</p>
+                <form id="contact-form" action="send_message.php" method="POST">
+                    <div class="form-group">
+                        <label for="telegram">Ваш Telegram: <i class="fab fa-telegram"></i></label>
+                        <input type="text" id="telegram" name="telegram" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваша почта: <i class="fas fa-envelope"></i></label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="question">Ваш вопрос: <i class="fas fa-question-circle"></i></label>
+                        <textarea id="question" name="question" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button"><i class="fas fa-paper-plane"></i> Отправить</button>
+                </form>
+                <div id="success-message" class="success-message" style="display:none;">
+                    <i class="fas fa-check-circle"></i> Сообщение успешно отправлено!
+                </div>
+                <div id="error-message" class="error-message" style="display:none;">
+                    <i class="fas fa-exclamation-triangle"></i> Ошибка отправки сообщения. Попробуйте позже.
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <div id="footer-container"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Load header and footer
+      fetch('components/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-container').innerHTML = data);
+
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары - STARPETS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div id="header-container"></div>
+
+        <main>
+            <section class="product-listing">
+                <h2>Каталог товаров</h2>
+                <div class="product-grid">
+                    <div class="product-item" onclick="showProductDetails('item1')">
+                        <img src="images/product1.png" alt="Товар 1">
+                        <h3>Игрушка "Космический мячик"</h3>
+                        <p>Яркий мячик для активных игр вашего питомца!</p>
+                        <span class="price">150 руб.</span>
+                        <a href="#" class="buy-link"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
+                    <div class="product-item" onclick="showProductDetails('item2')">
+                        <img src="images/product2.png" alt="Товар 2">
+                        <h3>Лежанка "Звездный домик"</h3>
+                        <p>Уютное место для отдыха вашего любимца.</p>
+                        <span class="price">500 руб.</span>
+                        <a href="#" class="buy-link"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
+                    <div class="product-item" onclick="showProductDetails('item3')">
+                        <img src="images/product3.png" alt="Товар 3">
+                        <h3>Корм "Галактическое питание"</h3>
+                        <p>Сбалансированный корм для здоровья и энергии.</p>
+                        <span class="price">300 руб.</span>
+                        <a href="#" class="buy-link"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
+                    <div class="product-item" onclick="showProductDetails('item4')">
+                        <img src="images/product4.png" alt="Товар 4">
+                        <h3>Шлейка "Млечный путь"</h3>
+
+
+                        <p>Стильная и удобная шлейка для прогулок.</p>
+                        <span class="price">400 руб.</span>
+                        <a href="#" class="buy-link"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
+                    <div class="product-item" onclick="showProductDetails('item5')">
+                        <img src="images/product5.png" alt="Товар 5">
+                        <h3>Миска "Небесный океан"</h3>
+                        <p>Красивая и практичная миска для воды или корма.</p>
+                        <span class="price">200 руб.</span>
+                        <a href="#" class="buy-link"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
+                    <div class="product-item" onclick="showProductDetails('item6')">
+                        <img src="images/product6.png" alt="Товар 6">
+                        <h3>Когтеточка "Планета когтей"</h3>
+                        <p>Отличное развлечение и забота о когтях вашего кота.</p>
+                        <span class="price">600 руб.</span>
+                        <a href="#" class="buy-link"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
+                </div>
+            </section>
+
+            <div id="product-details" style="display:none;">
+                <h3 id="product-title"></h3>
+                <p id="product-description"></p>
+                <a id="buy-button" href="#" class="buy-link"><i class="fas fa-shopping-cart"></i> Перейти к покупке</a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <div id="footer-container"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Load header and footer
+      fetch('components/header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-container').innerHTML = data);
+
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+</body>
+</html>

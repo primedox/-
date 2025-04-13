@@ -1,0 +1,272 @@
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f4f4f4;
+    overflow: hidden; /* Предотвращает полосы прокрутки */
+    height: 100vh; /* Занимает всю высоту экрана */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+main {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto; /* Добавляет прокрутку только для контента main */
+}
+
+/* Общие стили для страниц */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Стили для баннера */
+.banner-container {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.banner-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Добавлена анимация перехода */
+}
+
+.banner-item {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(to right, #4CAF50, #8BC34A); /* Пример градиента */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: white;
+    margin-right: 10px; /* Добавлен отступ между элементами */
+    min-width: 300px;  /* Чтобы элементы не сжимались слишком сильно */
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину элемента */
+}
+
+.banner-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover; /* Обрезает изображение, чтобы поместилось в круг */
+}
+
+.banner-info h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.banner-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #eee;
+}
+
+/* Стили для интерактивных элементов */
+.interactive-elements {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.interactive-item {
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.interactive-item:hover {
+    transform: scale(1.1);
+}
+
+.interactive-item i {
+    color: #3498db;
+}
+
+.interactive-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+/* Стили для модальных окон */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Стили для товаров */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-card {
+    width: 45%;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin: 10px;
+    font-size: 16px;
+}
+
+.product-card .price {
+    margin: 0 10px 10px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Стили для формы обратной связи */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#contactForm button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#contactForm button:hover {
+    background-color: #2980b9;
+}
+
+/* Стили для табов */
+.tabs {
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.tab {
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.tab i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.tab span {
+    font-size: 12px;
+}
+
+.tab:hover,
+.tab.active {
+    color: #3498db;
+}
+
+/* Адаптивные стили */
+@media (max-width: 600px) {
+    .product-card {
+        width: 100%; /* Один товар в ряд */
+    }
+
+    .banner-item {
+        flex-direction: column; /* Перенос информации под изображение */
+        text-align: center;
+    }
+
+    .banner-item img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .interactive-elements {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .interactive-item {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+}
